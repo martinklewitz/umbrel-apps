@@ -7,10 +7,10 @@ services:
       APP_PORT: 4141
 
   alertmanager:
-    container_name: alertmanager
-    hostname: alertmanager
     image: prom/alertmanager
     restart: on-failure
+    depends_on:
+      - prometheus
     volumes:
       - ./alertmanager.conf:/etc/alertmanager/alertmanager.conf
     command:
@@ -19,8 +19,6 @@ services:
       - 9093:9093
 
   prometheus:
-    container_name: prometheus
-    hostname: prometheus
     image: prom/prometheus
     restart: on-failure
     volumes:
@@ -35,10 +33,10 @@ services:
       - 9090:9090
 
   grafana:
-    container_name: grafana
-    hostname: grafana
     image: grafana/grafana
     restart: on-failure
+    depends_on:
+      - prometheus
     volumes:
       - ./grafana_datasources.yml:/etc/grafana/provisioning/datasources/all.yaml
       - ./grafana_config.ini:/etc/grafana/config.ini
