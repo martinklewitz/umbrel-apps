@@ -3,20 +3,8 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: prometheus-grafana_grafana_1
+      APP_HOST: prometheus-grafana_prometheus_1
       APP_PORT: 4141
-
-  alertmanager:
-    image: prom/alertmanager
-    restart: on-failure
-    depends_on:
-      - prometheus
-    volumes:
-      - ./alertmanager.conf:/etc/alertmanager/alertmanager.conf
-    command:
-      - '--config.file=/etc/alertmanager/alertmanager.conf'
-    ports:
-      - 9093:9093
 
   prometheus:
     image: prom/prometheus
@@ -31,17 +19,3 @@ services:
       - alertmanager:alertmanager
     ports:
       - 9090:9090
-
-  grafana:
-    image: grafana/grafana
-    restart: on-failure
-    depends_on:
-      - prometheus
-    volumes:
-      - ./grafana_datasources.yml:/etc/grafana/provisioning/datasources/all.yaml
-      - ./grafana_config.ini:/etc/grafana/config.ini
-      - ${APP_DATA_DIR}/grafana:/var/lib/grafana
-    links:
-      - prometheus:prometheus
-    ports:
-      - 4141:3000
