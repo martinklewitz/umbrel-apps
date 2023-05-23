@@ -10,8 +10,8 @@ services:
     image: prom/prometheus
     restart: on-failure
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./alert_rules.yml:/etc/prometheus/alert_rules.yml
+      - ${APP_DATA_DIR}/../prometheus.yml:/etc/prometheus/prometheus.yml
+      - ${APP_DATA_DIR}/..fix/alert_rules.yml:/etc/prometheus/alert_rules.yml
       - ${APP_DATA_DIR}/prometheus:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
