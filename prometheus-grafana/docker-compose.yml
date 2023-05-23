@@ -15,7 +15,5 @@ services:
       - ${APP_DATA_DIR}/prometheus:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
-    links:
-      - alertmanager:alertmanager
     ports:
       - 9090:9090
