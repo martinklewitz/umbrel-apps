@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: grafana
+      APP_HOST: prometheus-grafana_grafana_1
       APP_PORT: 4141
 
   alertmanager:
