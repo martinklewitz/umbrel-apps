@@ -4,7 +4,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: prometheus-grafana_prometheus_1
-      APP_PORT: 9090
+      APP_PORT: 3000
 
   prometheus:
     image: prom/prometheus
