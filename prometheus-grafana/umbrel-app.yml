@@ -2,7 +2,7 @@ manifestVersion: 1
 id: prometheus-grafana
 category: Development
 name: prometheus-grafana
-version: "1.0"
+version: "0.1"
 tagline: A Prometheus Grafana Stack
 description: >-
   Description
@@ -14,10 +14,10 @@ website: https://klewitz.info
 dependencies:
 repo: https://github.com/martinklewitz
 support:
-port: 3000
+port: 4141
 gallery:
-  - 1.jpg
 path: ""
+torOnly: false
 defaultUsername: ""
 defaultPassword: ""
 submitter: martinklewitz
