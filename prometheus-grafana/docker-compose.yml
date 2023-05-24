@@ -13,5 +13,3 @@ services:
       - ${APP_DATA_DIR}/data/prometheus:/etc/prometheus/
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
-    ports:
-      - "4141:9090"
