@@ -13,3 +13,13 @@ services:
       - ${APP_DATA_DIR}/data/prometheus:/etc/prometheus/
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
+
+  grafana:
+    container_name: grafana
+    hostname: grafana
+    image: grafana/grafana
+    volumes:
+      - ${APP_DATA_DIR}/data/grafana:/etc/grafana/
+      - ${APP_DATA_DIR}/data/grafana/lib:/var/lib/grafana
+    ports:
+      - 3000:3000
