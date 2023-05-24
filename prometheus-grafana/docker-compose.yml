@@ -19,7 +19,7 @@ services:
     hostname: grafana
     image: grafana/grafana
     volumes:
-      - ${APP_DATA_DIR}/data/grafana:/etc/grafana/
-      - ${APP_DATA_DIR}/data/grafana/lib:/var/lib/grafana
+      - ${APP_DATA_DIR}/data/grafana/etc:/etc/grafana/
+      - ${APP_DATA_DIR}/data/grafana/lib:/var/lib/grafana/
     ports:
       - 3000:3000
