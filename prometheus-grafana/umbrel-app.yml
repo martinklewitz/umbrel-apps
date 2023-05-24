@@ -9,6 +9,7 @@ description: >-
 
 releaseNotes: >-
   First Version
+dependencies: []
 developer: Martin Klewitz
 website: https://klewitz.info
 repo: https://github.com/martinklewitz
