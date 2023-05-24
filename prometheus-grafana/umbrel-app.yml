@@ -11,9 +11,7 @@ releaseNotes: >-
   First Version
 developer: Martin Klewitz
 website: https://klewitz.info
-dependencies:
 repo: https://github.com/martinklewitz
-support:
 port: 4142
 gallery:
   - https://raw.githubusercontent.com/prometheus/prometheus/main/documentation/images/prometheus-logo.svg
