@@ -4,7 +4,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: prometheus-grafana_prometheus_1
-      APP_PORT: 3000
+      APP_PORT: 3001
 
   prometheus:
     image: prom/prometheus
@@ -23,3 +23,5 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/grafana/etc:/etc/
       - ${APP_DATA_DIR}/data/grafana/lib:/var/lib/
+    ports:
+      - "3000:3000"
