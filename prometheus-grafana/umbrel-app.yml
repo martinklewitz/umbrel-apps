@@ -12,7 +12,7 @@ releaseNotes: >-
 developer: Martin Klewitz
 website: https://klewitz.info
 repo: https://github.com/martinklewitz
-port: 4142
+port: 9090
 gallery:
   - https://raw.githubusercontent.com/prometheus/prometheus/main/documentation/images/prometheus-logo.svg
 path: ""
@@ -20,4 +20,3 @@ torOnly: false
 defaultUsername: ""
 defaultPassword: ""
 submitter: martinklewitz
-submission:
