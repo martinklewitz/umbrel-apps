@@ -14,7 +14,7 @@ website: https://klewitz.info
 dependencies:
 repo: https://github.com/martinklewitz
 support:
-port: 4141
+port: 4142
 gallery:
 path: ""
 torOnly: false
