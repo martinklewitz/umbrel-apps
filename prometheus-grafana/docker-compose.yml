@@ -9,6 +9,7 @@ services:
   prometheus:
     image: prom/prometheus
     restart: on-failure
+    user: "1000:1000"
     volumes:
       - ${APP_DATA_DIR}/data/prometheus:/etc/prometheus/
     command:
@@ -20,7 +21,7 @@ services:
     container_name: grafana
     hostname: grafana
     image: grafana/grafana
-    user: '104'
+    user: "1000:1000"
     volumes:
       - ${APP_DATA_DIR}/data/grafana/etc:/etc/:rw
       - ${APP_DATA_DIR}/data/grafana/lib:/var/lib/:rw
