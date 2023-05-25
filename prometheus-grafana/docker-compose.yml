@@ -24,3 +24,5 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/grafana/etc:/etc/:rw
       - ${APP_DATA_DIR}/data/grafana/lib:/var/lib/:rw
+    ports:
+      - "3000:3000"
