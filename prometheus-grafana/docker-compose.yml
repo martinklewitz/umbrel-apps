@@ -4,12 +4,11 @@ services:
   app_proxy:
     environment:
       APP_HOST: prometheus-grafana_grafana_1
-      APP_PORT: 3002
+      APP_PORT: 3000
 
   prometheus:
     image: prom/prometheus
     restart: on-failure
-    user: "1000:1000"
     volumes:
       - ${APP_DATA_DIR}/data/prometheus:/etc/prometheus/
     command:
@@ -25,5 +24,3 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/grafana/etc:/etc/:rw
       - ${APP_DATA_DIR}/data/grafana/lib:/var/lib/:rw
-    ports:
-      - "3000:3000"
