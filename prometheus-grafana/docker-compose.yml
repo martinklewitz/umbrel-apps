@@ -10,7 +10,8 @@ services:
     image: prom/prometheus
     restart: on-failure
     volumes:
-      - ${APP_DATA_DIR}/data/prometheus:/etc/prometheus/
+      - ${APP_DATA_DIR}/data/prometheus/etc:/etc/prometheus/
+      - ${APP_DATA_DIR}/data/prometheus/prometheus:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     ports:
