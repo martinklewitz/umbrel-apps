@@ -19,8 +19,8 @@ services:
       - 9090:9090
 
   grafana:
-    container_name: grafana
     image: grafana/grafana
+    restart: on-failure
     user: "1000:1000"
     volumes:
       - ${APP_DATA_DIR}/data/grafana/etc:/etc/:rw
