@@ -13,7 +13,7 @@ dependencies: []
 developer: Martin Klewitz
 website: https://klewitz.info
 repo: https://github.com/martinklewitz
-port: 3000
+port: 3001
 gallery:
   - https://raw.githubusercontent.com/prometheus/prometheus/main/documentation/images/prometheus-logo.svg
 path: ""
