@@ -39,7 +39,6 @@ services:
   tasmota-exporter:
     image: eugenezadyra/tasmota-exporter:latest
     environment:
-      MQTT_HOSTNAME: umbrel.local
       MQTT_PORT: 8883
       PROMETHEUS_EXPORTER_PORT: 9092
     ports:
