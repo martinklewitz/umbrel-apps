@@ -26,20 +26,30 @@ services:
       - ${APP_DATA_DIR}/data/grafana/etc:/etc/:rw
       - ${APP_DATA_DIR}/data/grafana/lib:/var/lib/:rw
 
-  mosquitto:
-    image: eclipse-mosquitto
-    volumes:
-      - ${APP_DATA_DIR}/data/mosquitto/conf:/mosquitto/config
-      - ${APP_DATA_DIR}/data/mosquitto/data:/mosquitto/data
-      - ${APP_DATA_DIR}/data/mosquitto/log:/mosquitto/log
+  tasmota:
+    image: ghcr.io/astr0n8t/tasmota-power-exporter:latest
+    container_name: tasmota-power
+    restart: always
     ports:
-      - 8883:1883
-
-  tasmota-exporter:
-    image: eugenezadyra/tasmota-exporter:latest
+      - 9099:8000
     environment:
-      MQTT_PORT: 8883
-      PROMETHEUS_EXPORTER_PORT: 9092
-    ports:
-      - '9092:9092'
-    restart: unless-stopped
+      - DEVICE_IP=192.168.178.85
+
+
+#  mosquitto:
+#    image: eclipse-mosquitto
+#    volumes:
+#      - ${APP_DATA_DIR}/data/mosquitto/conf:/mosquitto/config
+#      - ${APP_DATA_DIR}/data/mosquitto/data:/mosquitto/data
+#      - ${APP_DATA_DIR}/data/mosquitto/log:/mosquitto/log
+#    ports:
+#      - 8883:1883
+#
+#  tasmota-exporter:
+#    image: eugenezadyra/tasmota-exporter:latest
+#    environment:
+#      MQTT_PORT: 8883
+#      PROMETHEUS_EXPORTER_PORT: 9092
+#    ports:
+#      - '9092:9092'
+#    restart: unless-stopped

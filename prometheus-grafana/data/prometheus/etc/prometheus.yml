@@ -34,4 +34,4 @@ scrape_configs:
   - job_name: 'tasmota'
     scrape_interval: 5s
     static_configs:
-      - targets: ['umbrel.local:9092']
+      - targets: ['umbrel.local:9099']
