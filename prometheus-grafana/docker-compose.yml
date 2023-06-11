@@ -34,13 +34,13 @@ services:
       - ${APP_DATA_DIR}/data/mosquitto/data:/mosquitto/data
       - ${APP_DATA_DIR}/data/mosquitto/log:/mosquitto/log
     ports:
-      - 1883:1883
+      - 8883:8883
 
   tasmota-exporter:
     image: eugenezadyra/tasmota-exporter:latest
     environment:
       MQTT_HOSTNAME: umbrel.local
-      MQTT_PORT: 1883
+      MQTT_PORT: 8883
       PROMETHEUS_EXPORTER_PORT: 9092
     ports:
       - '9092:9092'
