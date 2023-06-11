@@ -34,7 +34,7 @@ services:
       - ${APP_DATA_DIR}/data/mosquitto/data:/mosquitto/data
       - ${APP_DATA_DIR}/data/mosquitto/log:/mosquitto/log
     ports:
-      - 8883:8883
+      - 8883:1883
 
   tasmota-exporter:
     image: eugenezadyra/tasmota-exporter:latest
