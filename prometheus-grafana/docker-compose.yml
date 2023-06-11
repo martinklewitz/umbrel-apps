@@ -30,11 +30,11 @@ services:
     image: eclipse-mosquitto
     user: "1000:1000"
     volumes:
-      - ${APP_DATA_DIR}/data/mosquitto/conf:/mosquitto/conf
+      - ${APP_DATA_DIR}/data/mosquitto/conf:/mosquitto/config
       - ${APP_DATA_DIR}/data/mosquitto/data:/mosquitto/data
       - ${APP_DATA_DIR}/data/mosquitto/log:/mosquitto/log
     ports:
-      - 8883:1883
+      - 8883:8883
 
   tasmota-exporter:
     image: eugenezadyra/tasmota-exporter:latest
