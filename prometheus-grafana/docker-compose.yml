@@ -37,6 +37,7 @@ services:
 
   tasmota-exporter:
     image: eugenezadyra/tasmota-exporter:latest
+    user: "1000:1000"
     environment:
       MQTT_HOSTNAME: umbrel.local
       MQTT_PORT: 1883
