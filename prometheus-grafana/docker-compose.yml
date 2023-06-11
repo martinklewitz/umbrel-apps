@@ -28,7 +28,6 @@ services:
 
   mosquitto:
     image: eclipse-mosquitto
-    user: "1000:1000"
     volumes:
       - ${APP_DATA_DIR}/data/mosquitto/conf:/mosquitto/config
       - ${APP_DATA_DIR}/data/mosquitto/data:/mosquitto/data
