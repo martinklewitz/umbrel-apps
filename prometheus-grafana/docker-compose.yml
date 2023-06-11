@@ -28,7 +28,6 @@ services:
 
   tasmota:
     image: ghcr.io/astr0n8t/tasmota-power-exporter:latest
-    container_name: tasmota-power
     restart: always
     ports:
       - 9099:8000
