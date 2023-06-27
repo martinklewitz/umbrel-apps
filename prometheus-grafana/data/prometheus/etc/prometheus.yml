@@ -35,4 +35,4 @@ scrape_configs:
     metrics_path: '/'
     scrape_interval: 5s
     static_configs:
-      - targets: ['umbrel.local:9099']
+      - targets: ['192.168.178.82:9099']
