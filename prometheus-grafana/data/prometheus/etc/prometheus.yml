@@ -35,6 +35,6 @@ scrape_configs:
     metrics_path: '/'
     scrape_interval: 5s
     static_configs:
-      - targets: ['localhost:9099']
+      - targets: [localhost:9099]
         labels:
           application: 'tasmota'
