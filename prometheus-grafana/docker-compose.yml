@@ -10,6 +10,8 @@ services:
     image: prom/prometheus
     restart: on-failure
     user: "1000:1000"
+    depends_on:
+      - tasmota
     volumes:
       - ${APP_DATA_DIR}/data/prometheus/etc:/etc/prometheus/
       - ${APP_DATA_DIR}/data/prometheus/prometheus:/prometheus
