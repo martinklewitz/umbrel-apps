@@ -35,4 +35,6 @@ scrape_configs:
     metrics_path: '/'
     scrape_interval: 5s
     static_configs:
-      - targets: ['192.168.178.82:9099']
+      - targets: ['prometheus-grafana_tasmota_1:9099']
+        labels:
+          application: 'tasmota'
