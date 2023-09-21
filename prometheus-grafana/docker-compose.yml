@@ -40,7 +40,6 @@ services:
 
   fritz-exporter:
     image: pdreker/fritz_exporter:2
-    container_name: fritz-exporter
     restart: always
     environment:
       FRITZ_HOSTNAME: 'fritz.box'
