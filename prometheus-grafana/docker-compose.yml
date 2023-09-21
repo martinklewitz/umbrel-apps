@@ -38,6 +38,17 @@ services:
     environment:
       - DEVICE_IP=192.168.178.85
 
+  fritz-exporter:
+    image: pdreker/fritz_exporter:2
+    container_name: fritz-exporter
+    restart: always
+    environment:
+      FRITZ_HOSTNAME: 'fritz.box'
+      FRITZ_USERNAME: 'prometheus'
+      FRITZ_PASSWORD: 'prometheussecretlogin'
+    ports:
+      - "9787:9787"
+
 #  mosquitto:
 #    image: eclipse-mosquitto
 #    volumes:
