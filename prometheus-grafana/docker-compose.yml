@@ -39,14 +39,15 @@ services:
       - DEVICE_IP=192.168.178.85
 
   fritz-exporter:
-    image: pdreker/fritz_exporter:2
+    image: jaymedh/fritzbox_smarthome_exporter
     restart: always
     environment:
-      FRITZ_HOSTNAME: 'fritz.box'
-      FRITZ_USERNAME: 'prometheus'
-      FRITZ_PASSWORD: 'prometheussecretlogin'
+      URL: 'https://fritz.box'
+      NOVERIFY: 'true'
+      USERNAME: 'prometheus'
+      PASSWORD: 'prometheussecretlogin'
     ports:
-      - "9787:9787"
+      - "9103:9103"
 
 #  mosquitto:
 #    image: eclipse-mosquitto
