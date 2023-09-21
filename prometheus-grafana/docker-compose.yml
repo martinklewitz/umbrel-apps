@@ -44,6 +44,7 @@ services:
     environment:
       URL: 'https://fritz.box'
       NOVERIFY: 'true'
+      LOGLEVEL: 'info'
       USERNAME: 'prometheus'
       PASSWORD: 'prometheussecretlogin'
     ports:
