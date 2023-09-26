@@ -38,6 +38,16 @@ services:
     environment:
       - DEVICE_IP=192.168.178.85
 
+  tasmota_prom:
+    image: ghcr.io/martinklewitz/tasmota-prometheus-devices-exporter:latest
+    restart: always
+    ports:
+      - 9098:8000
+    environment:
+      - DEVICE_IPS=192.168.178.85
+      - DISCOVER_TASMOTAS=True
+      - DISCOVER_RANGE=192.168.178.
+
   fritz-exporter:
     image: jaymedh/fritzbox_smarthome_exporter
     restart: always
