@@ -35,7 +35,7 @@ scrape_configs:
     metrics_path: '/'
     scrape_interval: 5s
     static_configs:
-      - targets: [prometheus-grafana_tasmota_1:8000]
+      - targets: [prometheus-grafana_tasmota_prometheus_1:8000]
         labels:
           application: 'tasmota'
   - job_name: 'fritz_home'
