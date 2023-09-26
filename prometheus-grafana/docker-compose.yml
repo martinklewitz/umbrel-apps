@@ -30,19 +30,11 @@ services:
       - ${APP_DATA_DIR}/data/grafana/etc:/etc/:rw
       - ${APP_DATA_DIR}/data/grafana/lib:/var/lib/:rw
 
-  tasmota:
-    image: ghcr.io/astr0n8t/tasmota-power-exporter:latest
-    restart: always
-    ports:
-      - 9099:8000
-    environment:
-      - DEVICE_IP=192.168.178.85
-
   tasmota_prom:
     image: ghcr.io/martinklewitz/tasmota-prometheus-devices-exporter:latest
     restart: always
     ports:
-      - 9098:8000
+      - 9099:8000
     environment:
       - DEVICE_IPS=192.168.178.85
       - DISCOVER_TASMOTAS=True
