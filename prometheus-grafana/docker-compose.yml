@@ -11,7 +11,7 @@ services:
     restart: on-failure
     user: "1000:1000"
     depends_on:
-      - tasmota_prometheus
+      - tasmota
     volumes:
       - ${APP_DATA_DIR}/data/prometheus/etc:/etc/prometheus/
       - ${APP_DATA_DIR}/data/prometheus/prometheus:/prometheus
@@ -30,7 +30,7 @@ services:
       - ${APP_DATA_DIR}/data/grafana/etc:/etc/:rw
       - ${APP_DATA_DIR}/data/grafana/lib:/var/lib/:rw
 
-  tasmota_prometheus:
+  tasmota:
     image: ghcr.io/martinklewitz/tasmota-prometheus-devices-exporter:latest
     restart: always
     ports:
