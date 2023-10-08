@@ -36,7 +36,7 @@ services:
     ports:
       - 9099:8000
     environment:
-      - DEVICE_IPS=192.168.178.85
+      - DEVICE_IPS=192.168.178.36
       - DISCOVER_TASMOTAS=True
       - DISCOVER_RANGE=192.168.178.
 
