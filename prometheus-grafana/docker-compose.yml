@@ -16,7 +16,8 @@ services:
       - ${APP_DATA_DIR}/data/prometheus/etc:/etc/prometheus/
       - ${APP_DATA_DIR}/data/prometheus/prometheus:/prometheus
     command:
-      - '--storage.tsdb.retention.time=365d --config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.retention.time=365d'
+      - '--config.file=/etc/prometheus/prometheus.yml'
     ports:
       - 9090:9090
 
