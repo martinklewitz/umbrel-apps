@@ -33,14 +33,14 @@ scrape_configs:
           application: 'opendtu'
   - job_name: 'tasmota'
     metrics_path: '/'
-    scrape_interval: 5s
+    scrape_interval: 15s
     static_configs:
       - targets: [prometheus-grafana_tasmota_1:8000]
         labels:
           application: 'tasmota'
   - job_name: 'fritz_home'
     metrics_path: '/metrics'
-    scrape_interval: 5s
+    scrape_interval: 15s
     static_configs:
       - targets: [prometheus-grafana_fritz-exporter_1:9103]
         labels:
